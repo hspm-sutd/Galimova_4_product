@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ru">
+
+<head>
+</head>
+
+<body>
+   Наименование товара <input id="name" />
+   Количество <input id="quantity" />
+   <p><button id="btn"> Добавить </button></p>
+   <p id="message"></p>
+   <p id="message2"></p>
+   <script>
+   var a = 0;
+      function test(){
+            let name = document.querySelector('#name')
+            let quantity = document.querySelector('#quantity')
+            let message = document.querySelector('#message')
+            let message2 = document.querySelector('#message2')
+            var sum
+            if (name.value === null || name.value === "") {
+               alert("Введите название товара!");
+            }
+            else {
+               let text = name.value + ", " + quantity.value + "шт."
+               message.innerHTML += '<br>' + text
+               var sum = a + Number( document.getElementById("quantity").value)
+               message2.innerHTML = "Итого " + sum + "шт."
+            }
+            a = sum
+      }
+
+      let btn = document.querySelector('#btn')
+      btn.addEventListener('click', test)
+    </script>
+</body>
